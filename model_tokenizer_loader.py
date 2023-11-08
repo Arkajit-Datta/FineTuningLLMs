@@ -104,6 +104,7 @@ class LoadModelandTokenizer:
             f"trainable params: {trainable_params} || all params: {all_param} || trainable%: {100 * trainable_params / all_param}"
         )
     
-    @classmethod
     def load(self):
-        return self.load_tokenizer(), self.load_model()
+        tokenizer = self.load_tokenizer()
+        model = self.load_model()
+        return tokenizer, model

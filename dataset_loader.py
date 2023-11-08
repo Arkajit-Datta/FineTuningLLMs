@@ -10,7 +10,7 @@ class DatasetLoader:
 
     def _load_dataset(self):
         # Load training split (you can process it here)
-        self.train_dataset = load_dataset(self.dataset_name, split="train")
+        self.train_dataset = load_dataset(self.dataset_name)
         self.train_dataset = self.train_dataset.map(self.format_example)
         self.train_dataset = self.train_dataset.remove_columns(['question', 'answer'])
         
@@ -23,7 +23,7 @@ class DatasetLoader:
         self.info()
         return self.train_dataset
 
-    def format_example(example):
+    def format_example(self, example):
         return {"text": f"<|system|>\n{example['system']}</s>\n<|user|>\n{example['instruction']}</s>\n<|assistant|>\n{example['output']}"}
     
     def info(self):

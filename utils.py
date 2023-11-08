@@ -7,7 +7,7 @@ def login_huggingface():
     login(token = hf_token)
 
 def check_cuda_available_and_assign_device(accelerator):
-    if torch.cuda.is_available(accelerator):
+    if torch.cuda.is_available():
         print("You have a GPU available! Setting `DEVICE=\"cuda\"`")
         return accelerator.device
     else:

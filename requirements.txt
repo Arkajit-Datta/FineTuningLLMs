@@ -1,0 +1,8 @@
+scipy
+accelerate 
+peft 
+bitsandbytes
+trl 
+xformers 
+wandb
+transformers @ git+https://github.com/huggingface/transformers

@@ -1,9 +1,9 @@
-scipy
-accelerate 
-peft 
+transformers
+trl
+peft
+accelerate
+datasets
 bitsandbytes
-trl 
-xformers 
 wandb
-transformers @ git+https://github.com/huggingface/transformers
 deepspeed
+scipy
